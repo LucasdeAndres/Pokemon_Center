@@ -1,0 +1,40 @@
+
+.formulario_ingreso {
+    font-family: Roboto;
+    display: flex;
+    gap: 2%;
+    justify-content: space-around;
+    padding: 0 3% 3% 3%;
+    align-items: center;
+}
+
+.formulario_ingreso .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    width: 50%;
+}
+
+.formulario_ingreso .inputs .input{
+    background-color: var(--bg_form);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.formulario_ingreso .inputs .input .nombre_seccion {
+    background-color: var(--title_form);
+    display: flex;  
+    align-items: center;
+    padding: 2%;
+    gap: 1%;
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: var(--black);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.formulario_ingreso .inputs .input .nombre_seccion img{
+    width: 5%;
+    height: auto;
+}

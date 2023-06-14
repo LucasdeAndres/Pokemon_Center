@@ -1,0 +1,47 @@
+.home{
+    height: 100vh;
+}
+
+.home .container_home {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg_home_lightblue);
+    font-size: 100%;
+}
+
+.home .container_home .home_red {
+    background-color: var(--action_color);
+    padding: 3% 50vw;
+}
+
+.home .container_home .pokeball {
+    width: 20%;
+    height: auto;
+    margin-top: 3%;
+}
+
+.home .container_home h1 {
+    width: 60%;
+    margin-top: 2%;
+}
+
+.home .container_home h1 .logo_home {
+    width: 100%;
+}
+
+.home .container_home a {
+    margin-top: 2%;
+    width: 36%;
+    font-size: 2vw;
+    padding: 0.64rem;
+}
+
+.home .container_home .button_home {
+    margin-top: 2%;
+    width: 100%;
+    font-size: 2vw;
+    padding: 0.64rem;
+}

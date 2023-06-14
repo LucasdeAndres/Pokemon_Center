@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --action_color : #D82F31 ;
+  --button_color_bg: #E74B3F;
+  --button_color_active: #8e1a12;
+  --bg_home_lightblue: #DDF7FB;
+  --pokeball_home: #60D7F1;
+  --white: #F6F6F7;
+  --black : #1A3139;
+  --title_form : #2EB7DF;
+  --bg_form : #86E0E9;
+  --bg_input : #DDF7FB;
+}

@@ -1,0 +1,46 @@
+.detalle_formulario {
+    background-color: var(--bg_form);
+    width: 50%;
+    font-family: Roboto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    color: var(--black);
+}
+
+.detalle_formulario .encabezado {
+    background-color: var(--title_form);
+    padding: 2%;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.detalle_formulario .datos_cliente .filas{
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+}
+.detalle_formulario .datos_cliente .filas .fila2{
+    text-align: right;
+}
+
+.detalle_formulario .datos_cliente h4{
+    margin-top: 3%;
+    background-color: var(--title_form);
+    font-weight: 500;
+    padding: 3%;
+}
+
+.detalle_formulario .button_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalle_formulario .button_container .detalle_button {
+    width: 40%;
+    padding: 2%;
+    border-radius: 10px;
+    margin: 3%;
+}

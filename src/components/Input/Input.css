@@ -1,0 +1,18 @@
+.input_contenedor {
+    font-family: Roboto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.input_contenedor label {
+    margin: 4px;
+}
+
+.input_contenedor input {
+    background-color: var(--bg_input);
+    border: none;
+    border-radius: 3px;
+    padding: 1%;
+    color: var(--black);
+}

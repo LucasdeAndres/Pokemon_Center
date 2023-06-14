@@ -1,0 +1,19 @@
+.formPage {
+    background-color: var(--black);
+    height: 100vh;
+}
+
+.formPage .body_formPage {
+    background-color: var(--black);
+}
+
+.formPage .body_formPage .body_formPage_text {
+    font-family: Roboto;
+    color: var(--white);
+    padding: 3%;
+}
+
+.formPage .body_formPage .body_formPage_text h3{
+    margin-top: 1%;
+    font-weight: 200;
+}
