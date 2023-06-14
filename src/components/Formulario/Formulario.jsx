@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Detalle from "../Detalle/Detalle";
 import Input from "../Input/Input";
 import pokeball from "../../assets/pokeball_logo_home.png"
 import user from "../../assets/usuario.png"
 import "./Formulario.css"
-import axios from "axios";
+
+import { useQuery } from "@tanstack/react-query";
+import { getTypes } from "../../services/poke_api";
+
 
 /**
  * Componente de formulario.
@@ -17,19 +20,22 @@ import axios from "axios";
 
 const Formulario = () => {
 
-  const [types, setTypes] = useState([])
 
-  console.log(types);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["tipos"],
+    queryFn : getTypes
+  })
 
-  useEffect(() => {
-    axios.get("https://pokeapi.co/api/v2/type/")
-      .then(response => {
-        setTypes(response.data.results);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
+  if(isLoading) {
+    return <p>Loading...</p>
+  }
+
+  if(error) {
+    return <p>Error: {error.message}</p>
+  }
+
+  console.log(data);
+
 
   return (
       <div className="formulario_ingreso">
@@ -52,7 +58,7 @@ const Formulario = () => {
               <Input name="especie" label="Especie" type="text"/>
               <select name="tipos" label="Tipos" >
                 <option value="">Seleccione tipo</option>
-                {types.map(type =>{
+                {data.map(type =>{
                   return <option key={type.name} value={type.name}>{type.name}</option>
                 })}
               </select>

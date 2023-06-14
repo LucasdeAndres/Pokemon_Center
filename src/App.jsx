@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import "./App.css";
 import { FormPage } from "./pages/FormPage/FormPage";
 import { FormProvider } from "./context/ContextoFormulario";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 /**
  * Componente principal de la aplicación.
@@ -11,8 +12,11 @@ import { FormProvider } from "./context/ContextoFormulario";
  * @returns {JSX.Element} Elemento JSX que representa la aplicación.
  */
 
+ const queryClient = new QueryClient()
+
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <div className="App">
     <FormProvider>
       <Routes>
@@ -21,6 +25,7 @@ function App() {
       </Routes>
     </FormProvider> 
     </div>
+    </QueryClientProvider>
   );
 }
 
