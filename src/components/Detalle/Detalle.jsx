@@ -1,6 +1,7 @@
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 import React, { useContext } from "react";
 import { FormContext } from "../../context/ContextoFormulario";
-import {Button} from "../Button/Button"
 import "./Detalle.css"
 
 
@@ -11,7 +12,55 @@ import "./Detalle.css"
 
 const Detalle = () => {
 
+  const enviarFormulario = async (data) => {
+    try {
+      const response = await axios.post("https://jsonplaceholder.typicode.com/todos", data, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+  
+      if (response.status === 201) {
+        alert("Solicitud enviada :)");
+        return response.data;
+      }
+    } catch (error) {
+      console.error(error);
+      alert(`Ocurrio el siguiente error ${error}`)
+    }
+  };
+
   const { formData } = useContext(FormContext)
+
+  console.log(formData);
+
+  const mutation = useMutation(enviarFormulario)
+
+  console.log(mutation);
+
+  
+
+  function verificarObjeto(obj) {
+    for (let key in obj) {
+      console.log(key);
+      if (obj[key] === "") {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const dataForm = verificarObjeto(formData)
+
+    if (dataForm){
+      mutation.mutate(formData)
+    }else{
+      alert(`Por favor completar los datos faltantes`)
+    }
+  }
 
   return (
     <div className="detalle_formulario">
@@ -53,7 +102,7 @@ const Detalle = () => {
         </div>
       </section>
       <div className="button_container">
-        <Button text="Enviar Solicitud" nameClass="detalle_button"></Button>
+        <button className="detalle_button" onClick={handleSubmit}>{mutation.isLoading ? "Enviando..." : "Enviar Solicitud"}</button>
       </div>
     </div>
   );

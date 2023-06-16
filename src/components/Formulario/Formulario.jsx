@@ -6,7 +6,8 @@ import user from "../../assets/usuario.png"
 import "./Formulario.css"
 
 import { useQuery } from "@tanstack/react-query";
-import { getTypes } from "../../services/poke_api";
+import { getSpecies, getTypes } from "../../services/poke_api";
+import { Select } from "../Select/Select";
 
 
 /**
@@ -20,21 +21,34 @@ import { getTypes } from "../../services/poke_api";
 
 const Formulario = () => {
 
+  const {data: dataSpecies, isLoading: isLoadingSpecies, error: errorSpecies} = useQuery({
+    queryKey: ["Species"],
+    queryFn: getSpecies
+  })
 
-  const { data, isLoading, error } = useQuery({
+
+
+
+  const { data : dataTipos, isLoading: isLoadingTipos, error: errorTipos} = useQuery({
     queryKey: ["tipos"],
     queryFn : getTypes
   })
 
-  if(isLoading) {
+  if(isLoadingTipos) {
     return <p>Loading...</p>
   }
 
-  if(error) {
-    return <p>Error: {error.message}</p>
+  if(errorTipos) {
+    return <p>Error: {errorTipos.message}</p>
   }
 
-  console.log(data);
+  if (isLoadingSpecies){
+    return <p>Loading....</p>
+  }
+  
+  if (errorSpecies) {
+    return <p>Error: {errorSpecies.message}</p>
+  }
 
 
   return (
@@ -56,12 +70,8 @@ const Formulario = () => {
               </div>
               <Input name="nombrePokemon" label="Nombre" type="text"/>
               <Input name="especie" label="Especie" type="text"/>
-              <select name="tipos" label="Tipos" >
-                <option value="">Seleccione tipo</option>
-                {data.map(type =>{
-                  return <option key={type.name} value={type.name}>{type.name}</option>
-                })}
-              </select>
+              <Select name="especie" label="Especie" data={dataSpecies}/>
+              <Select name="tipos" label="tipos" data={dataTipos} />
               <Input name="altura" label="Altura" type="text"/>
               <Input name="edad" label="Edad" type="text"/>
             </div>
