@@ -32,11 +32,10 @@ const Detalle = () => {
 
   const { formData } = useContext(FormContext)
 
-  console.log(formData);
+
 
   const mutation = useMutation(enviarFormulario)
 
-  console.log(mutation);
 
   
 

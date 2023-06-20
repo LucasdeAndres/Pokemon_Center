@@ -1,6 +1,7 @@
 import React from 'react'
 import Formulario from '../../components/Formulario/Formulario'
 import { Header } from '../../components/Header/Header'
+import { PopUpSpecies } from '../../components/PopUPSpecies/PopUpSpecies'
 import "./FormPage.css"
 
 /**
@@ -21,6 +22,7 @@ export const FormPage = () => {
             </div>
             <Formulario></Formulario>
         </div>
+        <PopUpSpecies></PopUpSpecies>
     </div>
   )
 }

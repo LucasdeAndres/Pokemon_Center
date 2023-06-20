@@ -47,8 +47,14 @@ export const FormProvider = ({ children }) => {
         }))
     }
 
+    const [isVisible, setIsVisible] = useState(false);
+
+    const togglePopup = () => {
+      setIsVisible(!isVisible);
+    };
+
     return (
-        <FormContext.Provider value={{formData, updateFormData}}>
+        <FormContext.Provider value={{formData, updateFormData, togglePopup, isVisible}}>
             {children}
         </FormContext.Provider>
     )

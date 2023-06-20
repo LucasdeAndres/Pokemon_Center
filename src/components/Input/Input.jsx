@@ -26,6 +26,7 @@ const Input = ({ name, label, type }) => {
     const [input, setInput] = useState("")
     
     console.log(input);
+    
   const onChange = (e) => {
     setInput(e.target.value)
     console.log(e.target.value);

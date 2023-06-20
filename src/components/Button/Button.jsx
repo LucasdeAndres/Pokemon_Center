@@ -14,7 +14,7 @@ import "./Button.css"
 
 export const Button = ({text, nameClass}) => {
   return (
-        <button className={nameClass}>
+        <button id='buttonPrincipal' className={nameClass}>
           {text}
         </button>
 

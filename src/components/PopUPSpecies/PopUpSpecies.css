@@ -1,0 +1,12 @@
+.popUpSpecies {
+    background-color: var(--bg_form);
+}
+
+.show {
+    opacity: 1;
+    z-index: 999;
+}
+
+.noShow {
+    opacity: 0;
+}
