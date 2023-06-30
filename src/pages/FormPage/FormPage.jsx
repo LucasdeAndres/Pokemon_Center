@@ -22,7 +22,7 @@ export const FormPage = () => {
             </div>
             <Formulario></Formulario>
         </div>
-        <PopUpSpecies></PopUpSpecies>
+        <PopUpSpecies className="popUpSpecies"></PopUpSpecies>
     </div>
   )
 }

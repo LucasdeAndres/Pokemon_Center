@@ -1,5 +1,38 @@
 .popUpSpecies {
     background-color: var(--bg_form);
+    width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.popUpSpecies .x {
+    width: 10%;
+    padding: 2%;
+    border-radius: 10px;
+    margin: 3%;
+}
+
+.popUpSpecies .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popUpSpecies .AS {
+    width: 40%;
+    padding: 2%;
+    border-radius: 10px;
+    margin: 3%;
+}
+
+.popUpSpecies .species {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.popUpSpecies .species .pokemon {
+    margin: 2%;
 }
 
 .show {

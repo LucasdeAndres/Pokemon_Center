@@ -64,7 +64,7 @@ const Formulario = () => {
                 <span>Pokemon</span>
               </div>
               <Input name="nombrePokemon" label="Nombre" type="text"/>
-              <button className="buttonSpecies" onClick={togglePopup}>Seleccionar Specie</button>
+              <button className="buttonSpecies" onClick={togglePopup}>Seleccionar Especie</button>
               {/* <Select name="especie" label="Especie" /> */}
               <Select name="tipos" label="tipos" data={dataTipos} />
               <Input name="altura" label="Altura" type="text"/>

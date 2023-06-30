@@ -45,24 +45,33 @@ export const PopUpSpecies = () => {
       togglePopup()
     };
 
-  return (
-    <div>
+    return (
+      <div>
         {isVisible && (
-                    <div className='popUpSpecies'>
-                    <button onClick={togglePopup}>X</button>
-                    <div>
-                        {dataSpecies.map(specie => {
-                            return <div key={specie.name}>
-                                        <button name={specie.name} type="button" onClick={onClickSpecies}>
-                                          <img src={specie.details.sprites.front_default} alt={specie.name}></img>
-                                        </button>
-                                    </div>
-                        })}
+          <div className='popUpSpecies'>
+            <button onClick={togglePopup} className="x">X</button>
+            {isLoadingSpecies ? (
+              <p>Loading...</p>
+            ) : (
+              <>
+                <div className='species'>
+                  {dataSpecies.map(specie => (
+                    <div key={specie.name} className="pokemon">
+                      <button name={specie.name} type="button" onClick={onClickSpecies}>
+                        <img src={specie.details.sprites.front_default} alt={specie.name}></img>
+                      </button>
                     </div>
-                    <button onClick={handlePreviousPage} disabled={page === 1}>Anterior</button>
-                    <button onClick={handleNextPage}>Siguiente</button>
+                  ))}
                 </div>
+                <div className='buttons'>
+                  <button onClick={handlePreviousPage} disabled={page === 1} className="AS">Anterior</button>
+                  <button onClick={handleNextPage} className="AS">Siguiente</button>
+                </div>
+              </>
+            )}
+          </div>
         )}
-    </div>    
-  )
+      </div>
+    );
+    
 }

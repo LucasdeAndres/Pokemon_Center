@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { FormContext } from '../../context/ContextoFormulario';
+import "./Select.css"
 
 export const Select = ({name, label, data}) => {
 

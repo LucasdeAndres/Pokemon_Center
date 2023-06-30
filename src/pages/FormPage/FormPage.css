@@ -1,6 +1,7 @@
 .formPage {
     background-color: var(--black);
     height: 100vh;
+    position: relative;
 }
 
 .formPage .body_formPage {
@@ -16,4 +17,11 @@
 .formPage .body_formPage .body_formPage_text h3{
     margin-top: 1%;
     font-weight: 200;
+}
+
+.formPage .popUpSpecies {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

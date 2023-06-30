@@ -17,3 +17,10 @@ button:active {
     background-color: var(--button_color_active);
 }
 
+.buttonSpecies {
+    width: 40%;
+    padding: 2%;
+    border-radius: 10px;
+    margin: 3%;
+}
+
